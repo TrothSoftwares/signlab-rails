@@ -46,7 +46,10 @@ class CustomersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def customer_params
-      params.require(:data).require(:attributes).permit!
+      logger.info "Customer Params"
+      logger.info params.inspect
+      #params.require(:data).require(:attributes).permit!
+      params[:customer].permit!
       #params[:customer]
     end
 end

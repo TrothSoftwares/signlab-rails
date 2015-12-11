@@ -26,9 +26,7 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
-  #  @project.update_attribute(:customer , params[:customer])
-    logger.info "*********"
-  logger.info   params[:customer]
+ 
     if @project.update(project_params)
       render json: @project
     else
