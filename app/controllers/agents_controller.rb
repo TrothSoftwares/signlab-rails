@@ -46,6 +46,7 @@ class AgentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def agent_params
-      params[:agent]
+      params[:agent].permit!
+      
     end
 end

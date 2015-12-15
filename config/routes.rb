@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :itemtypes
+  resources :jobtypes
+  resources :items
+  resources :enquiries
   resources :agents
   resources :customers
   resources :projects

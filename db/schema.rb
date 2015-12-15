@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211055907) do
+ActiveRecord::Schema.define(version: 20151214102130) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -42,6 +42,31 @@ ActiveRecord::Schema.define(version: 20151211055907) do
     t.index ["project_id"], name: "index_enquiries_on_project_id", using: :btree
   end
 
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "dimensions",  limit: 255
+    t.string   "description", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "project_id",  limit: 4
+    t.integer  "jobtype_id",  limit: 4
+    t.integer  "itemtype_id", limit: 4
+    t.index ["itemtype_id"], name: "index_items_on_itemtype_id", using: :btree
+    t.index ["jobtype_id"], name: "index_items_on_jobtype_id", using: :btree
+    t.index ["project_id"], name: "index_items_on_project_id", using: :btree
+  end
+
+  create_table "itemtypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "jobtypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",        limit: 255
     t.string   "location",    limit: 255
@@ -54,6 +79,9 @@ ActiveRecord::Schema.define(version: 20151211055907) do
   end
 
   add_foreign_key "enquiries", "projects"
+  add_foreign_key "items", "itemtypes"
+  add_foreign_key "items", "jobtypes"
+  add_foreign_key "items", "projects"
   add_foreign_key "projects", "agents"
   add_foreign_key "projects", "customers"
 end
