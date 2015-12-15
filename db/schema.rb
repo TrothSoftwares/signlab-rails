@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215044205) do
+ActiveRecord::Schema.define(version: 20151215054353) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -48,10 +48,8 @@ ActiveRecord::Schema.define(version: 20151215044205) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "project_id",  limit: 4
-    t.integer  "jobtype_id",  limit: 4
     t.integer  "itemtype_id", limit: 4
     t.index ["itemtype_id"], name: "index_items_on_itemtype_id", using: :btree
-    t.index ["jobtype_id"], name: "index_items_on_jobtype_id", using: :btree
     t.index ["project_id"], name: "index_items_on_project_id", using: :btree
   end
 
@@ -85,7 +83,6 @@ ActiveRecord::Schema.define(version: 20151215044205) do
 
   add_foreign_key "enquiries", "projects"
   add_foreign_key "items", "itemtypes"
-  add_foreign_key "items", "jobtypes"
   add_foreign_key "items", "projects"
   add_foreign_key "projects", "agents"
   add_foreign_key "projects", "customers"
