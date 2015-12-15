@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214102130) do
+ActiveRecord::Schema.define(version: 20151215044205) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -53,6 +53,11 @@ ActiveRecord::Schema.define(version: 20151214102130) do
     t.index ["itemtype_id"], name: "index_items_on_itemtype_id", using: :btree
     t.index ["jobtype_id"], name: "index_items_on_jobtype_id", using: :btree
     t.index ["project_id"], name: "index_items_on_project_id", using: :btree
+  end
+
+  create_table "items_jobtypes", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "item_id",    limit: 4
+    t.integer "jobtype_id", limit: 4
   end
 
   create_table "itemtypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
