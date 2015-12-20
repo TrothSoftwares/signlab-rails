@@ -22,6 +22,8 @@ gem 'mysql2', '~> 0.3.18'
 # gem 'capistrano-rails', group: :development
 
 # Use ActiveModelSerializers to serialize JSON responses
+gem 'devise', github: 'twalpole/devise', branch: 'rails5'
+
 gem 'active_model_serializers', '~> 0.10.0.rc2'
 
 gem 'active-model-adapter-source', '~> 0.1.7'
