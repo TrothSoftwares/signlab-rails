@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215054353) do
+ActiveRecord::Schema.define(version: 20151221101934) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -49,7 +49,12 @@ ActiveRecord::Schema.define(version: 20151215054353) do
     t.datetime "updated_at",              null: false
     t.integer  "project_id",  limit: 4
     t.integer  "itemtype_id", limit: 4
+    t.integer  "jobtype_id",  limit: 4
+    t.string   "unit",        limit: 255
+    t.string   "rate",        limit: 255
+    t.string   "amount",      limit: 255
     t.index ["itemtype_id"], name: "index_items_on_itemtype_id", using: :btree
+    t.index ["jobtype_id"], name: "index_items_on_jobtype_id", using: :btree
     t.index ["project_id"], name: "index_items_on_project_id", using: :btree
   end
 
@@ -81,9 +86,39 @@ ActiveRecord::Schema.define(version: 20151215054353) do
     t.index ["customer_id"], name: "index_projects_on_customer_id", using: :btree
   end
 
+  create_table "quotations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "date"
+    t.string   "subject",    limit: 255
+    t.text     "body",       limit: 65535
+    t.integer  "project_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["project_id"], name: "index_quotations_on_project_id", using: :btree
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "authentication_token",   limit: 255, default: "", null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
   add_foreign_key "enquiries", "projects"
   add_foreign_key "items", "itemtypes"
+  add_foreign_key "items", "jobtypes"
   add_foreign_key "items", "projects"
   add_foreign_key "projects", "agents"
   add_foreign_key "projects", "customers"
+  add_foreign_key "quotations", "projects"
 end

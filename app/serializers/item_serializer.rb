@@ -1,7 +1,7 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id , :dimensions, :description
+  attributes :id , :dimensions, :description ,:unit , :rate , :amount
   belongs_to :project
   belongs_to :itemtype
-  has_many :jobtypes
+  belongs_to :jobtype
   # has_and_belongs_to_many :jobtypes
 end

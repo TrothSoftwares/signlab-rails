@@ -4,6 +4,7 @@ class ProjectSerializer < ActiveModel::Serializer
   belongs_to :agent
   has_many :enquiries
   has_many :items
+  has_one :quotation
 
 
 
