@@ -1,3 +1,6 @@
 class QuotationSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id ,:date ,:subject ,:body
+
+  belongs_to :project
+
 end

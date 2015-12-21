@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
- 
+
     if @project.update(project_params)
       render json: @project
     else
@@ -47,7 +47,7 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      logger.info params.inspect
+      #logger.info params.inspect
       #params.require(:data).require(:attributes).permit!
       params[:project].permit!
     end

@@ -46,6 +46,6 @@ class QuotationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def quotation_params
-      params[:quotation]
+      params[:quotation].permit!
     end
 end
