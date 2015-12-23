@@ -12,6 +12,9 @@ gem 'arel', github: "rails/arel"
 gem 'sqlite3'
 gem 'mysql2', '~> 0.3.18'
 
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
