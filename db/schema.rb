@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222135301) do
+ActiveRecord::Schema.define(version: 20151223073210) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -102,6 +102,15 @@ ActiveRecord::Schema.define(version: 20151222135301) do
     t.index ["project_id"], name: "index_quotations_on_project_id", using: :btree
   end
 
+  create_table "siteimages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "description", limit: 255
+    t.text     "url",         limit: 65535
+    t.integer  "item_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["item_id"], name: "index_siteimages_on_item_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -127,4 +136,5 @@ ActiveRecord::Schema.define(version: 20151222135301) do
   add_foreign_key "projects", "agents"
   add_foreign_key "projects", "customers"
   add_foreign_key "quotations", "projects"
+  add_foreign_key "siteimages", "items"
 end
