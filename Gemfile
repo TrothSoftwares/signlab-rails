@@ -9,8 +9,12 @@ gem 'arel', github: "rails/arel"
 
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-gem 'mysql2', '~> 0.3.18'
+
+
+gem 'pg'
+
+
+
 
 
 
@@ -34,6 +38,7 @@ gem 'active-model-adapter-source', '~> 0.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'mysql2', '~> 0.3.18'
 end
 
 group :development do
