@@ -115,6 +115,7 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    mysql2 (0.3.18)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.1)
@@ -152,6 +153,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0.rc2)
   arel!
   byebug
+  mysql2 (~> 0.3.18)
   pg (= 0.18.1)
   rack!
   rack-cors
