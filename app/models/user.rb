@@ -1,22 +1,25 @@
 class User < ActiveRecord::Base
-  before_save :set_auth_token
+  acts_as_token_authenticatable
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable #:trackable, :validatable
+  # devise :registerable
+  before_save :ensure_authentication_token
 
-  private
-  def set_auth_token
-    if self.authentication_token.blank?
+  def ensure_authentication_token
+    if authentication_token.blank?
       self.authentication_token = generate_authentication_token
     end
   end
 
-  def generate_authentication_token
-    loop do
-      token = Devise.friendly_token
-      break token unless User.where(authentication_token: token).first
+  private
+
+    def generate_authentication_token
+      loop do
+        token = Devise.friendly_token
+        break token unless User.where(authentication_token: token).first
+      end
     end
-  end
 end

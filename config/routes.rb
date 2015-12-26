@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   devise_for :users, controllers: { sessions: 'sessions' }
   resources :itemtypes
   resources :jobtypes
@@ -7,6 +9,12 @@ Rails.application.routes.draw do
   resources :agents
   resources :customers
   resources :projects
+
+
+
+  # devise_scope :user do
+  #   post "users/sign_in", to: "devise/sessions#create"
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
