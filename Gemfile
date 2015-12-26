@@ -27,7 +27,7 @@ gem 'active-model-adapter-source', '~> 0.1.7'
 
 
 
-gem 'pg'
+gem 'pg' ,'0.18.1'
 group :production do
 
    gem 'rails_12factor', '0.0.2'
