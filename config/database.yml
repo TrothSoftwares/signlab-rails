@@ -89,6 +89,10 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: signlab-rails_5_production
   username: signlab-rails
   password: <%= ENV['SIGNLAB-RAILS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
