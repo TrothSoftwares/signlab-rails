@@ -117,7 +117,7 @@ GEM
     minitest (5.8.3)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
-    pg (0.17.1)
+    pg (0.18.1)
     rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -152,7 +152,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0.rc2)
   arel!
   byebug
-  pg
+  pg (= 0.18.1)
   rack!
   rack-cors
   rails!
