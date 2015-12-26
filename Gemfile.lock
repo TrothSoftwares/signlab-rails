@@ -154,7 +154,7 @@ DEPENDENCIES
   arel!
   byebug
   mysql2 (~> 0.3.18)
-  pg (= 0.17.1)
+  pg
   rack!
   rack-cors
   rails!
