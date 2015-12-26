@@ -1,26 +1,11 @@
 source 'https://rubygems.org'
 
 ruby '2.2.2'
-
-
-
 gem 'rack', github: 'rack/rack'
-
 gem 'rails', github: "rails/rails"
 gem 'sprockets-rails', github: "rails/sprockets-rails"
 gem 'arel', github: "rails/arel"
-
-
 # Use sqlite3 as the database for Active Record
-
-
-
-
-
-
-
-
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -32,6 +17,7 @@ gem 'arel', github: "rails/arel"
 # gem 'capistrano-rails', group: :development
 
 # Use ActiveModelSerializers to serialize JSON responses
+
 gem 'active_model_serializers', '~> 0.10.0.rc2'
 
 gem 'active-model-adapter-source', '~> 0.1.7'
@@ -41,18 +27,18 @@ gem 'active-model-adapter-source', '~> 0.1.7'
 
 
 
-gem 'pg'
-group :production do
 
-  gem 'rails_12factor', '0.0.2'
+group :production do
+  gem 'pg'
+  # gem 'rails_12factor', '0.0.2'
 end
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  
-  #gem 'mysql2', '~> 0.3.18'
+
+  gem 'mysql2', '~> 0.3.18'
 end
 
 group :development do

@@ -115,6 +115,7 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    mysql2 (0.3.18)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.17.1)
@@ -129,11 +130,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
-    rails_12factor (0.0.2)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.4)
-    rails_stdout_logging (0.0.4)
     rake (10.4.2)
     spring (1.5.0)
     sprockets (3.5.2)
@@ -152,11 +148,11 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0.rc2)
   arel!
   byebug
+  mysql2 (~> 0.3.18)
   pg
   rack!
   rack-cors
   rails!
-  rails_12factor (= 0.0.2)
   spring
   sprockets-rails!
   web-console!
