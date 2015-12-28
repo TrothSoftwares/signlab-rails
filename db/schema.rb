@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222135301) do
+ActiveRecord::Schema.define(version: 20151227133428) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20151222135301) do
     t.string   "othrefdetails", limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "designimages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "description", limit: 255
+    t.text     "url",         limit: 65535
+    t.integer  "item_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["item_id"], name: "index_designimages_on_item_id", using: :btree
   end
 
   create_table "enquiries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -102,6 +111,15 @@ ActiveRecord::Schema.define(version: 20151222135301) do
     t.index ["project_id"], name: "index_quotations_on_project_id", using: :btree
   end
 
+  create_table "siteimages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "description", limit: 255
+    t.text     "url",         limit: 65535
+    t.integer  "item_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["item_id"], name: "index_siteimages_on_item_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -120,6 +138,7 @@ ActiveRecord::Schema.define(version: 20151222135301) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "designimages", "items"
   add_foreign_key "enquiries", "projects"
   add_foreign_key "items", "itemtypes"
   add_foreign_key "items", "jobtypes"
@@ -127,4 +146,5 @@ ActiveRecord::Schema.define(version: 20151222135301) do
   add_foreign_key "projects", "agents"
   add_foreign_key "projects", "customers"
   add_foreign_key "quotations", "projects"
+  add_foreign_key "siteimages", "items"
 end
