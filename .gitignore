@@ -16,3 +16,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+
+#ignore all files in public
+/public/uploads/*
