@@ -12,7 +12,7 @@ class DesignimageSerializer < ActiveModel::Serializer
     if Rails.env == 'development'
       'http://localhost:3000' + object.url.to_s
     else
-      'http://signlab.herokuapp.com' + object.url.to_s
+      'http://signlab-rails.herokuapp.com' + object.url.to_s
     end
   end
 
@@ -20,7 +20,7 @@ class DesignimageSerializer < ActiveModel::Serializer
     if Rails.env == 'development'
       'http://localhost:3000' + object.url.thumb.to_s
     else
-      'http://signlab.herokuapp.com' + object.url.thumb.to_s
+      'http://signlab-rails.herokuapp.com' + object.url.thumb.to_s
     end
   end
 
