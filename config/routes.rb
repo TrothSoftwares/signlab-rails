@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :designimages
   resources :siteimages
   resources :quotations
   resources :itemtypes
