@@ -1,8 +1,11 @@
 class SessionsController < Devise::SessionsController
   respond_to :html, :json
 
+
+
   def create
     super do |user|
+      logger.info user.inspect
       if request.format.json?
         data = {
           token: user.authentication_token,
