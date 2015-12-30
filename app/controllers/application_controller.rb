@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user_from_token!
+  #before_filter :authenticate_user_from_token!
 
   # Enter the normal Devise authentication path,
   # using the token authenticated user if available
-  before_action :authenticate_user!
+  before_filter :authenticate_user!
 
   private
 

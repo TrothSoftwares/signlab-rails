@@ -1,20 +1,17 @@
 class User < ActiveRecord::Base
-  acts_as_token_authenticatable
+  before_save :set_auth_token
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable #:trackable, :validatable
-  # devise :registerable
-  before_save :ensure_authentication_token
+    # Include default devise modules. Others available are:
+    # :confirmable, :lockable, :timeoutable and :omniauthable
+    devise :database_authenticatable, :registerable,
+           :recoverable, :rememberable, :trackable, :validatable
 
-  def ensure_authentication_token
-    if authentication_token.blank?
-      self.authentication_token = generate_authentication_token
+    private
+    def set_auth_token
+      if self.authentication_token.blank?
+        self.authentication_token = generate_authentication_token
+      end
     end
-  end
-
-  private
 
     def generate_authentication_token
       loop do
@@ -22,4 +19,4 @@ class User < ActiveRecord::Base
         break token unless User.where(authentication_token: token).first
       end
     end
-end
+  end

@@ -22,9 +22,13 @@ gem 'mysql2', '~> 0.3.18'
 # gem 'capistrano-rails', group: :development
 
 # Use ActiveModelSerializers to serialize JSON responses
-gem 'devise', github: 'twalpole/devise', branch: 'rails5'
-# gem 'devise_token_auth'
-gem 'simple_token_authentication', '~> 1.0' # see semver.org
+#gem 'devise', github: 'twalpole/devise', branch: 'rails5'
+gem 'devise'
+
+
+
+ #gem 'devise_token_auth'  ,'0.1.37.beta4'
+#gem 'simple_token_authentication', '~> 1.0' # see semver.org
 
 gem 'active_model_serializers', '~> 0.10.0.rc2'
 
