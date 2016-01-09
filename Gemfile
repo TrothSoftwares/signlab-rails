@@ -11,6 +11,9 @@ gem 'arel', github: "rails/arel"
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem "mini_magick"
+#gem 'docx_replace'
+gem 'docx', '~> 0.2.07', :require => ["docx"]
+
 
 
 # Use ActiveModel has_secure_password
@@ -29,6 +32,8 @@ gem 'active_model_serializers', '~> 0.10.0.rc2'
 gem 'active-model-adapter-source', '~> 0.1.7'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
  gem 'rack-cors'
+
+
 
 
 

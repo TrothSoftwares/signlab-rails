@@ -111,6 +111,9 @@ GEM
     byebug (8.2.1)
     concurrent-ruby (1.0.0)
     debug_inspector (0.0.2)
+    docx (0.2.07)
+      nokogiri (~> 1.5)
+      rubyzip (~> 1.1.6)
     ember-source (2.2.0)
     erubis (2.7.0)
     globalid (0.3.6)
@@ -147,6 +150,7 @@ GEM
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.4)
     rake (10.4.2)
+    rubyzip (1.1.7)
     spring (1.5.0)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -165,6 +169,7 @@ DEPENDENCIES
   arel!
   byebug
   carrierwave!
+  docx (~> 0.2.07)
   mini_magick
   mysql2 (~> 0.3.18)
   pg (= 0.18.1)

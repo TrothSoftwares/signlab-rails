@@ -38,6 +38,28 @@ class QuotationsController < ApplicationController
     @quotation.destroy
   end
 
+
+
+  def quotation_report
+
+
+
+    require 'docx'
+
+
+doc = Docx::Document.open("#{Rails.root}/lib/docx_templates/sampledoc.docx")
+
+
+doc.bookmarks['example_bookmark'].insert_text_after("Hello world.")
+
+
+doc.save("#{Rails.root}/lib/docx_templates/edited.docx")
+
+
+
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quotation
