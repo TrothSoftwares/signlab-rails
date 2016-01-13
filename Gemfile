@@ -11,7 +11,9 @@ gem 'arel', github: "rails/arel"
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem "mini_magick"
-gem 'devise'
+#gem 'devise'
+gem 'devise', github: 'plataformatec/devise', branch: 'master'
+
 
 
 # Use ActiveModel has_secure_password

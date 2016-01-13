@@ -60,4 +60,4 @@
 # Jobtype.create(name: 'Tools and Equipment / rentals')
 # Jobtype.create(name: 'Others')
 
-# User.create(email: 'talhaqqq@test.com', password: 'password')
+User.create(email: 'talhaqqq@test.com', password: 'password')
