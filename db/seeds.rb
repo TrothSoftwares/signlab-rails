@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 # Agent.create(name: 'Heroku Agent', contactname: 'Heroku  contact name' , contactno: 'heroku contactno' , othcontactno: 'heroku othcontactno' ,othrefdetails:'heroku oth ref details')
 # Customer.create(name: 'Heroku Client', contactname: 'Heroku contact name' , contactno: 'heroku contactno' , othcontactno: 'heroku othcontactno', othrefdetails:'heroku oth ref details')
 # Itemtype.create(name: '3D Fab. letter');
