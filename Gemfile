@@ -10,9 +10,10 @@ gem 'arel', github: "rails/arel"
 
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem "mini_magick"
+
 #gem 'devise'
 gem 'devise', github: 'plataformatec/devise', branch: 'master'
+gem "mini_magick"
 
 
 

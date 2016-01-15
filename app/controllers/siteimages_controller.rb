@@ -46,7 +46,7 @@ class SiteimagesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def siteimage_params
-      
+      logger.info params
       params[:siteimage].permit!
     end
 end
