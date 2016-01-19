@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: delqfxno0
+  api_key: '611733129353218'
+  api_secret: e1K1IxRKFeMdvzi7FXG6jpoVUoM
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: delqfxno0
+  api_key: '611733129353218'
+  api_secret: e1K1IxRKFeMdvzi7FXG6jpoVUoM
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: delqfxno0
+  api_key: '611733129353218'
+  api_secret: e1K1IxRKFeMdvzi7FXG6jpoVUoM
+  enhance_image_tag: true
+  static_image_support: false
