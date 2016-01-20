@@ -6,11 +6,11 @@ class SessionsController < Devise::SessionsController
      respond_to do |format|
        format.json do
          self.resource = warden.authenticate!(auth_options)
-         logger.info resource.inspect
          data = {
            user_id: resource.id,
            token: resource.authentication_token,
-           email: resource.email
+           email: resource.email,
+           role: resource.role
          }
          render json: data, status: :created
 
