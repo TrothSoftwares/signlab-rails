@@ -16,6 +16,8 @@ gem 'cloudinary'
 #gem 'devise'
 gem 'devise', github: 'plataformatec/devise', branch: 'master'
 gem "mini_magick"
+gem 'puma'
+
 # gem 'the_role_api', '~> 3.0.0'
 # gem 'the_role', '~> 3.0.0'
 

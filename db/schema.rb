@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119091707) do
+ActiveRecord::Schema.define(version: 20160121032619) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20160119091707) do
     t.datetime "updated_at",              null: false
     t.integer  "customer_id", limit: 4
     t.integer  "agent_id",    limit: 4
+    t.string   "status",      limit: 255
     t.index ["agent_id"], name: "index_projects_on_agent_id", using: :btree
     t.index ["customer_id"], name: "index_projects_on_customer_id", using: :btree
   end
@@ -147,12 +148,6 @@ ActiveRecord::Schema.define(version: 20160119091707) do
     t.string   "role",                   limit: 255
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  end
-
-  create_table "users_roles", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id", limit: 4
-    t.integer "role_id", limit: 4
-    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
   end
 
   add_foreign_key "designimages", "items"

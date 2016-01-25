@@ -28,6 +28,8 @@ development:
   username: root
   password: password
   host: 127.0.0.1
+  pool: 5
+  timeout: 5000
 
 
   # The specified database role being used to connect to postgres.

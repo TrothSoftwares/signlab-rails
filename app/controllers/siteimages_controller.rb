@@ -36,6 +36,7 @@ class SiteimagesController < ApplicationController
   # DELETE /siteimages/1
   def destroy
     @siteimage.destroy
+    
   end
 
   private

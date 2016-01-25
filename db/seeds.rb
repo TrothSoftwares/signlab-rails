@@ -61,7 +61,7 @@
 # Jobtype.create(name: 'Tools and Equipment / rentals')
 # Jobtype.create(name: 'Others')
 
-User.create(email: 'admin@test.com', password: 'password' ,role:'admin')
-User.create(email: 'designer@test.com', password: 'password' ,role:'designer')
-User.create(email: 'siteworker@test.com', password: 'password' , role: 'siteworker')
-User.create(email: 'secretary@test.com', password: 'password' , role: 'secretary')
+# User.create(email: 'admin@test.com', password: 'password' ,role:'admin')
+# User.create(email: 'designer@test.com', password: 'password' ,role:'designer')
+# User.create(email: 'siteworker@test.com', password: 'password' , role: 'siteworker')
+# User.create(email: 'secretary@test.com', password: 'password' , role: 'secretary')

@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id , :name , :location
+  attributes :id , :name , :location , :status
   belongs_to :customer
   belongs_to :agent
   has_many :enquiries

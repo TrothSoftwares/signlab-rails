@@ -10,7 +10,7 @@ class DesignimageSerializer < ActiveModel::Serializer
   # FIXME:  this url should be dymanic
   def fullurl
     if Rails.env == 'development'
-      'http://localhost:3000' + object.url.to_s
+      object.url.to_s
     else
       'http://signlab-rails.herokuapp.com' + object.url.to_s
     end
@@ -18,14 +18,10 @@ class DesignimageSerializer < ActiveModel::Serializer
 
   def thumburl
     if Rails.env == 'development'
-      'http://localhost:3000' + object.url.thumb.to_s
+      object.url.thumb.to_s
     else
       'http://signlab-rails.herokuapp.com' + object.url.thumb.to_s
     end
   end
 
-
-  # def default_url
-  #     "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-  #  end
 end
