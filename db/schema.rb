@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121032619) do
+ActiveRecord::Schema.define(version: 20160126102946) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160121032619) do
     t.integer  "customer_id", limit: 4
     t.integer  "agent_id",    limit: 4
     t.string   "status",      limit: 255
+    t.datetime "duedate"
     t.index ["agent_id"], name: "index_projects_on_agent_id", using: :btree
     t.index ["customer_id"], name: "index_projects_on_customer_id", using: :btree
   end
