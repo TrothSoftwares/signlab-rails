@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+  has_paper_trail
   belongs_to :project
   belongs_to :itemtype
   belongs_to :jobtype

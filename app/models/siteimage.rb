@@ -1,5 +1,5 @@
 class Siteimage < ActiveRecord::Base
-  # mount_uploaders :url, SiteimageUploader
+  has_paper_trail
 
   mount_uploader :url, SiteimageUploader
   attr_accessor :is_thumbnable

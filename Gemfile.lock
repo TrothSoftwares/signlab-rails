@@ -152,6 +152,10 @@ GEM
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
+    paper_trail (4.0.2)
+      activerecord (>= 3.0, < 6.0)
+      activesupport (>= 3.0, < 6.0)
+      request_store (~> 1.1)
     pg (0.18.1)
     puma (2.15.3)
     rack-cors (0.4.0)
@@ -171,6 +175,7 @@ GEM
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.4)
     rake (10.4.2)
+    request_store (1.3.0)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
     rest-client (1.8.0)
@@ -204,6 +209,7 @@ DEPENDENCIES
   devise!
   mini_magick
   mysql2 (~> 0.3.18)
+  paper_trail
   pg (= 0.18.1)
   puma
   rack!
