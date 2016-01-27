@@ -7,21 +7,31 @@ class DesignimageSerializer < ActiveModel::Serializer
   end
 
 
-  # FIXME:  this url should be dymanic
+  
   def fullurl
-    if Rails.env == 'development'
-      object.url.to_s
-    else
-      'http://signlab-rails.herokuapp.com' + object.url.to_s
-    end
+       object.url.to_s
   end
 
+
   def thumburl
-    if Rails.env == 'development'
-      object.url.thumb.to_s
-    else
-      'http://signlab-rails.herokuapp.com' + object.url.thumb.to_s
-    end
+       object.url.thumb.to_s
   end
+
+  #
+  # def fullurl
+  #   if Rails.env == 'development'
+  #     object.url.to_s
+  #   else
+  #     'http://signlab-rails.herokuapp.com' + object.url.to_s
+  #   end
+  # end
+  #
+  # def thumburl
+  #   if Rails.env == 'development'
+  #     object.url.thumb.to_s
+  #   else
+  #     'http://signlab-rails.herokuapp.com' + object.url.thumb.to_s
+  #   end
+  # end
 
 end
