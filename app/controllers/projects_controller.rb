@@ -8,8 +8,24 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-    render json: @projects
-  end
+    itemchanges = Array.new
+    @projects.each do|project|
+      project.items.each do |item|
+        item.versions.each do |v|
+           itemchanges<<[v.changeset]
+
+        end
+        end
+      end
+
+
+      render json: @projects, itemchanges: itemchanges
+    end
+
+
+def message
+  "ddddd"
+end
 
   # GET /projects/1
   def show

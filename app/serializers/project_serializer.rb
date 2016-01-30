@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id , :name , :location , :status ,:duedate ,:versions
+  attributes :id , :name , :location , :status ,:duedate ,:versions 
   belongs_to :customer
   belongs_to :agent
   has_one :enquiry
@@ -18,13 +18,61 @@ end
 
 
 
-
-
-# def changeset
-#   # @last = object.previous_version
-#   # @content  = @last
-#   # @content
-# Project.getchangeset
+# def itemsversions
+#   object.items.map{|item| {
+#
+#     "versions": item.versions,
+#     "lastversion": item.versions.last,
+#     "description": item.description,
+#
+#
+#     "changeset":item.versions.map{|v| {
+#        "changeset": v,
+#        "whodunnit": User.find(v.whodunnit).email,
+#        "created_at": v.created_at
+#        }},
+#       "verdicts": item.versions.each do |v|
+#                    v
+#                     end
+#      }}
 # end
+
+
+
+
+
+
+
+
+#
+# def itemsversions
+#   itemchanges = Array.new
+#   object.items.each do |item|
+#
+#      item.versions.each do |v|
+#     itemchanges << "ssss"dfee
+#   end
+#
+#
+#   end
+#
+#   itemchanges
+#
+# end
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 end

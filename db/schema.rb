@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127114812) do
+ActiveRecord::Schema.define(version: 20160129092643) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -151,6 +151,14 @@ ActiveRecord::Schema.define(version: 20160127114812) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "version_associations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "version_id",       limit: 4
+    t.string  "foreign_key_name", limit: 255, null: false
+    t.integer "foreign_key_id",   limit: 4
+    t.index ["foreign_key_name", "foreign_key_id"], name: "index_version_associations_on_foreign_key", using: :btree
+    t.index ["version_id"], name: "index_version_associations_on_version_id", using: :btree
+  end
+
   create_table "versions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "item_type",      limit: 255,        null: false
     t.integer  "item_id",        limit: 4,          null: false
@@ -159,7 +167,9 @@ ActiveRecord::Schema.define(version: 20160127114812) do
     t.text     "object",         limit: 4294967295
     t.datetime "created_at"
     t.text     "object_changes", limit: 4294967295
+    t.integer  "transaction_id", limit: 4
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
+    t.index ["transaction_id"], name: "index_versions_on_transaction_id", using: :btree
   end
 
   add_foreign_key "designimages", "items"
