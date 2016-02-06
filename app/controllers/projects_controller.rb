@@ -23,10 +23,6 @@ class ProjectsController < ApplicationController
     end
 
 
-def message
-  "ddddd"
-end
-
   # GET /projects/1
   def show
 

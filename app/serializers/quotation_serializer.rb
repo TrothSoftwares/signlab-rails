@@ -1,5 +1,5 @@
 class QuotationSerializer < ActiveModel::Serializer
-  attributes :id ,:date ,:subject ,:body , :versions
+  attributes :id ,:date ,:subject ,:body , :versions ,:payment , :delivery , :power , :storetext , :note 
 
   belongs_to :project
 

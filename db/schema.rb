@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129092643) do
+ActiveRecord::Schema.define(version: 20160202084224) do
 
   create_table "agents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          limit: 255
@@ -110,6 +110,11 @@ ActiveRecord::Schema.define(version: 20160129092643) do
     t.integer  "project_id", limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.text     "payment",    limit: 65535
+    t.text     "delivery",   limit: 65535
+    t.text     "power",      limit: 65535
+    t.text     "storetext",  limit: 65535
+    t.text     "note",       limit: 65535
     t.index ["project_id"], name: "index_quotations_on_project_id", using: :btree
   end
 
