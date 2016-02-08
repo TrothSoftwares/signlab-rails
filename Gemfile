@@ -18,6 +18,7 @@ gem 'devise', github: 'plataformatec/devise', branch: 'master'
 gem "mini_magick"
 gem 'puma'
 gem 'paper_trail'
+gem 'rufus-scheduler'
 
 
 
