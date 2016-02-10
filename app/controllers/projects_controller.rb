@@ -1,3 +1,5 @@
+require 'newsletter_job'
+
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :update, :destroy]
 
@@ -25,12 +27,27 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
-
     render json: @project
   end
 
   # POST /projects
   def create
+   #Delayed::Job.enqueue(NewsletterJob.new('lorem ipsum...'))
+     #newsletter = NewsletterJob.new
+#      ExampleMailer.sample_email
+#
+#
+#
+#
+#
+#
+ # newsletter.customlog
+  # newsletter.delay(run_at: 2.minutes.from_now).customlog
+  # newsletter.delay(run_at: Time.now).customlog
+  # newsletter.delay(run_at: Time.zone.parse("2016-02-09 16:40:13")).customlog
+
+
+
     @project = Project.new(project_params)
 
     if @project.save
@@ -42,7 +59,6 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
-
     if @project.update(project_params)
       render json: @project
     else

@@ -29,11 +29,17 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
 
-
-
-
-
-
+config.action_mailer.delivery_method = :smtp
+# SMTP settings for gmail
+config.action_mailer.smtp_settings = {
+ :address              => "smtp.gmail.com",
+ :port                 => 587,
+ :domain               => 'gmail.com',
+ :user_name            => 'talhaqqq@gmail.com',
+ :password             => '9947183255',
+ :authentication       => "plain",
+:enable_starttls_auto => true
+}
 
 
 

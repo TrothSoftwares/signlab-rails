@@ -19,6 +19,10 @@ gem "mini_magick"
 gem 'puma'
 gem 'paper_trail'
 gem 'rufus-scheduler'
+gem 'delayed_job_active_record'
+gem 'daemons'
+
+
 
 
 
@@ -51,7 +55,7 @@ gem 'active-model-adapter-source', '~> 0.1.7'
 
 group :production do
   gem 'pg' ,'0.18.1'
-   gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor', '0.0.2'
 end
 
 
@@ -59,7 +63,6 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
   gem 'mysql2', '~> 0.3.18'
 end
 
