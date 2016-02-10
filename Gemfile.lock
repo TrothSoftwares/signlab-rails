@@ -127,7 +127,13 @@ GEM
       aws_cf_signer
       rest-client
     concurrent-ruby (1.0.0)
+    daemons (1.2.3)
     debug_inspector (0.0.2)
+    delayed_job (4.0.6)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.0.3)
+      activerecord (>= 3.0, < 5.0)
+      delayed_job (>= 3.0, < 4.1)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
     ember-source (2.2.0)
@@ -208,6 +214,8 @@ DEPENDENCIES
   byebug
   carrierwave!
   cloudinary
+  daemons
+  delayed_job_active_record
   devise!
   mini_magick
   mysql2 (~> 0.3.18)

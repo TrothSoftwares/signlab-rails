@@ -34,5 +34,12 @@ module SignlabApiRails5
     # Skip views, helpers and assets when generating a new resource.
     config.middleware.use ActionDispatch::Flash
     config.api_only = true
+    config.active_job.queue_adapter = :delayed_job
+    # config.time_zone = 'Kolkata'
+    config.active_record.default_timezone = :local
+    config.action_mailer.perform_deliveries = true
+
+
+
   end
 end
