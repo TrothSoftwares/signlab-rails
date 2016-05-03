@@ -6,10 +6,10 @@ class EnquirySerializer < ActiveModel::Serializer
   def versions
     object.versions.map{|v| {
        "changeset": v.changeset,
-       "whodunnit": User.find(v.whodunnit).email,
+       "whodunnit": User.find(v.whodunnit || 1).email ,
        "created_at": v.created_at
        }}
   end
 
-  
+
 end

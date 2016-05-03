@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id , :name , :location , :status ,:duedate ,:versions 
+  attributes :id , :name , :location , :status ,:duedate ,:versions
   belongs_to :customer
   belongs_to :agent
   has_one :enquiry
@@ -8,8 +8,9 @@ class ProjectSerializer < ActiveModel::Serializer
 
 def versions
   object.versions.map{|v| {
+
      "changeset": v.changeset,
-     "whodunnit": User.find(v.whodunnit).email,
+     "whodunnit": User.find(v.whodunnit || 1).email,
      "created_at": v.created_at
      }}
 end
