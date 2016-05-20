@@ -1,11 +1,16 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id , :name , :location , :status ,:duedate ,:versions
+  attributes :id , :name , :location , :status ,:duedate , :addeddate , :fstatusom , :fstatusgm , :fstatusis , :fstatusps , :iscomment , :pscomment ,  :versions
   belongs_to :customer
   belongs_to :agent
   has_one :enquiry
   has_many :items
   has_one :quotation
 
+
+
+def addeddate
+  object.created_at
+end
 def versions
   object.versions.map{|v| {
 
