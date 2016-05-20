@@ -71,8 +71,6 @@ User1 = User.create(email: 'admin@test.com', password: 'password' ,role:'admin')
 User2 =User.create(email: 'designer@test.com', password: 'password' ,role:'designer')
 User3 =User.create(email: 'siteworker@test.com', password: 'password' , role: 'siteworker')
 User4 =User.create(email: 'secretary@test.com', password: 'password' , role: 'secretary')
-
-
 User5 =User.create(email: 'om@signlab.com', password: 'password' , role: 'om')
 User6 =User.create(email: 'gm@signlab.com', password: 'password' , role: 'gm')
 
