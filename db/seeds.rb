@@ -74,10 +74,13 @@ User4 =User.create(email: 'secretary@test.com', password: 'password' , role: 'se
 User5 =User.create(email: 'om@signlab.com', password: 'password' , role: 'om')
 User6 =User.create(email: 'gm@signlab.com', password: 'password' , role: 'gm')
 
-
-Project1 = Project.create(name: 'TestPro1' , location: 'KSA' , customer: Customer1 , agent: Agent1 , status: 'created' , duedate: Date.today.next_month )
-
-Project2 = Project.create(name: 'TestPro2' , location: 'KSA' , customer: Customer1 , agent: Agent1 , status: 'started' , duedate: Date.today.next_month )
-
-Enquiry1 = Enquiry.create(date: Date.today , no: 1 , project: Project1)
-Quotation1 = Quotation.create(date: Date.today , subject: "Test Subject" , body: "Test Body" , project: Project1,  payment: "Test Payment Text" , delivery: "Test Delivery Text" , power: "Test Power Text", storetext: "Test Store Text", note: "Test Note Text")
+# 
+# Project1 = Project.create(name: 'TestPro1' , location: 'KSA' , customer: Customer1 , agent: Agent1 , status: 'created' , duedate: Date.today.next_month )
+#
+# Project2 = Project.create(name: 'TestPro2' , location: 'KSA' , customer: Customer1 , agent: Agent1 , status: 'started' , duedate: Date.today.next_month )
+#
+# Enquiry1 = Enquiry.create(date: Date.today , no: 1 , project: Project1)
+# Quotation1 = Quotation.create(date: Date.today , subject: "Test Subject" , body: "We are pleased to quote out lowest rate for the sign required as per the detailed discussion with us. We have also taken into consideration, as you are one of our esteemed customer. We are quoting this competitive rate." , project: Project1,  payment: "60% Advance balance and 40% up on completion" , delivery: "With 30 days from the date of confirmation and advance payment" , power: "220V power supply should be provided near the sign for fixing.", storetext: "Store facility of working materials should be provided", note: "All legal and official permit should be provided. External network, electrical and civil work should be done from customer side")
+#
+# Enquiry2 = Enquiry.create(date: Date.today , no: 2 , project: Project2)
+# Quotation2 = Quotation.create(date: Date.today , subject: "Test Subject" , body: "We are pleased to quote out lowest rate for the sign required as per the detailed discussion with us. We have also taken into consideration, as you are one of our esteemed customer. We are quoting this competitive rate." , project: Project2,  payment: "60% Advance balance and 40% up on completion" , delivery: "With 30 days from the date of confirmation and advance payment" , power: "220V power supply should be provided near the sign for fixing.", storetext: "Store facility of working materials should be provided", note: "All legal and official permit should be provided. External network, electrical and civil work should be done from customer side")
