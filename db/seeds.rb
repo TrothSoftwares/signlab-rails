@@ -76,6 +76,8 @@ User6 =User.create(email: 'gm@signlab.com', password: 'password' , role: 'gm')
 User7 =User.create(email: 'is@signlab.com', password: 'password' , role: 'is')
 User8 =User.create(email: 'ps@signlab.com', password: 'password' , role: 'ps')
 
+#added is and ps
+
 
 #
 # Project1 = Project.create(name: 'TestPro1' , location: 'KSA' , customer: Customer1 , agent: Agent1 , status: 'created' , duedate: Date.today.next_month )
