@@ -73,8 +73,10 @@ User3 =User.create(email: 'siteworker@test.com', password: 'password' , role: 's
 User4 =User.create(email: 'secretary@test.com', password: 'password' , role: 'secretary')
 User5 =User.create(email: 'om@signlab.com', password: 'password' , role: 'om')
 User6 =User.create(email: 'gm@signlab.com', password: 'password' , role: 'gm')
+User7 =User.create(email: 'is@signlab.com', password: 'password' , role: 'is')
+User8 =User.create(email: 'ps@signlab.com', password: 'password' , role: 'ps')
 
-# 
+#
 # Project1 = Project.create(name: 'TestPro1' , location: 'KSA' , customer: Customer1 , agent: Agent1 , status: 'created' , duedate: Date.today.next_month )
 #
 # Project2 = Project.create(name: 'TestPro2' , location: 'KSA' , customer: Customer1 , agent: Agent1 , status: 'started' , duedate: Date.today.next_month )
